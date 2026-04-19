@@ -1,12 +1,14 @@
 var sprites = {
- ship: { sx: 0, sy: 0, w: 37, h: 42, frames: 1 },
- missile: { sx: 0, sy: 30, w: 2, h: 10, frames: 1 },
- enemy_purple: { sx: 37, sy: 0, w: 42, h: 43, frames: 1 },
- enemy_bee: { sx: 79, sy: 0, w: 37, h: 43, frames: 1 },
- enemy_ship: { sx: 116, sy: 0, w: 42, h: 43, frames: 1 },
- enemy_circle: { sx: 158, sy: 0, w: 32, h: 33, frames: 1 },
- explosion: { sx: 0, sy: 64, w: 64, h: 64, frames: 12 },
- enemy_missile: { sx: 9, sy: 42, w: 3, h: 20, frame: 1, }
+  ship: { sx: 0, sy: 0, w: 37, h: 42, frames: 1 }, // submarine
+  missile: { sx: 0, sy: 30, w: 2, h: 10, frames: 1 }, // torpedo
+
+  enemy_purple: { sx: 37, sy: 0, w: 42, h: 43, frames: 1 }, // jellyfish
+  enemy_bee: { sx: 79, sy: 0, w: 37, h: 43, frames: 1 },    // fish swarm
+  enemy_ship: { sx: 116, sy: 0, w: 42, h: 43, frames: 1 },   // shark
+  enemy_circle: { sx: 158, sy: 0, w: 32, h: 33, frames: 1 }, // sea mine
+
+  explosion: { sx: 0, sy: 64, w: 64, h: 64, frames: 12 },
+  enemy_missile: { sx: 9, sy: 42, w: 3, h: 20, frame: 1 }
 };
 
 var enemies = {
@@ -179,7 +181,7 @@ PlayerShip.prototype.hit = function(damage) {
 };
 
 
-var PlayerMissile = function(x,y) {
+this.setup('missile',{ vy: -700, damage: 10 }); // torpedo {
   this.setup('missile',{ vy: -700, damage: 10 });
   this.x = x - this.w/2;
   this.y = y - this.h; 
